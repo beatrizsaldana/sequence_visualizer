@@ -21,6 +21,8 @@ def create_single_polar_plot(sequence: List[int]) -> go.Scatterpolar:
         theta = [x*(360/len(set(sequence))) for x in sequence],
         mode = 'markers+lines',
         line_color = 'violet',
+        line_width = 1,
+        marker_size = 2
     )
 
 def create_empty_polar_plot() -> go.Scatterpolar:
@@ -29,7 +31,7 @@ def create_empty_polar_plot() -> go.Scatterpolar:
         theta = []
     )
 
-def create_many_polar_plots(series: Series, number_of_plots: int = 49) -> go.Figure:
+def create_many_polar_plots(series: Series, number_of_plots: int = 80) -> go.Figure:
     number_of_columns = 10
     number_of_rows, final_row_plot_num = divmod(number_of_plots, number_of_columns)
     fig = make_subplots(
@@ -42,20 +44,22 @@ def create_many_polar_plots(series: Series, number_of_plots: int = 49) -> go.Fig
     for i in range(1, number_of_rows+1):
         for j in range(1, number_of_columns+1):
             sequence = series.get_mod_sequence(divisor=divisor)
-            fig.add_trace(
-                create_single_polar_plot(sequence),
-                row = i,
-                col = j
-            )
+            if sequence:
+                fig.add_trace(
+                    create_single_polar_plot(sequence),
+                    row = i,
+                    col = j
+                )
             divisor+=1
     if final_row_plot_num > 0:
         for j in range(1, final_row_plot_num+1):
             sequence = series.get_mod_sequence(divisor=divisor)
-            fig.add_trace(
-                create_single_polar_plot(sequence),
-                row = number_of_rows+1,
-                col = j
-            )
+            if sequence:
+                fig.add_trace(
+                    create_single_polar_plot(sequence),
+                    row = number_of_rows+1,
+                    col = j
+                )
             divisor+=1
 
 

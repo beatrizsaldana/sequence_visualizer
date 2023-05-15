@@ -5,7 +5,7 @@ from functions.get_sequences_functions import get_fibonacci_sequence
 
 from dash import Input, Output
 
-from assets.config import SERIES_LENGTH
+from assets.config import SERIES_LENGTH, NUMBER_OF_PLOTS
 
 
 @app.callback(
@@ -16,6 +16,5 @@ from assets.config import SERIES_LENGTH
 )
 def update_polar_figure(selected_series):
     series = Series.from_known_sequence(name=selected_series, length=SERIES_LENGTH)
-    #mod_sequence = series.get_mod_sequence(divisor=divisor)
-    return create_many_polar_plots(series=series)
+    return create_many_polar_plots(series=series, number_of_plots=NUMBER_OF_PLOTS)
     
