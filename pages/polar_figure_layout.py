@@ -9,16 +9,20 @@ def create_options():
 
 
 def create_toolbar():
-    toolbar = html.Div([
-        dbc.InputGroup([
-            dbc.InputGroupText('Series'),
-            dbc.Select(id='series_select', options=create_options(), value=create_options()[0]['value']),
-        ]),
-        dbc.InputGroup([
-            dbc.InputGroupText('Divisor'),
-            dbc.Input(id='divisor_input', value=3, type="number"),
-        ])
-    ])
+    toolbar = dbc.Row([
+        dbc.Col(
+            dbc.InputGroup([
+                dbc.InputGroupText('Series'),
+                dbc.Select(id='series_select', options=create_options(), value=create_options()[0]['value']),
+            ])
+        ),
+        dbc.Col(
+            dbc.InputGroup([
+                dbc.InputGroupText('Divisor'),
+                dbc.Input(id='divisor_input', value=3, type="number"),
+            ])
+        )
+    ], style={'marginBottom': 15})
     return toolbar
 
 
@@ -30,7 +34,7 @@ def create_figure_layout():
                     id='polar_figure',
                     figure=blank_figure(),
                     config={'displaylogo': False},
-                    style={'height': '95vh'}
+                    style={'height': '77vh'}
                 )
             ],
             id='polar_figure_loading',
@@ -41,8 +45,6 @@ def create_figure_layout():
 
 
 layout = html.Div([
-    dbc.Row([
-        dbc.Col(create_toolbar(), width=3),
-        dbc.Col(create_figure_layout(), width=9),
-    ])
+    create_toolbar(),
+    create_figure_layout()
 ])

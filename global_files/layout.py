@@ -2,7 +2,7 @@ from dash import html, dcc
 import dash_bootstrap_components as dbc
 
 from global_files.app import app
-from pages import polar_figure_layout
+from pages import polar_figure_layout, many_polar_figures_layout
 
 
 def serve_layout():
@@ -15,7 +15,10 @@ def serve_layout():
                 size = 'lg',
                 style = {
                     'display': 'inline-block',
-                    'paddingTop':0
+                    'paddingTop':0,
+                    'background-color':'#FFFFFF',
+                    'border-color':'#FFFFFF',
+                    'color':'grey'
                 }
             )
         ]
@@ -47,6 +50,14 @@ def serve_layout():
                         label='Polar Figure',
                         className='tab-content',
                         tab_id='porlar_figure_tab',
+                        label_style={'color': 'grey'}
+                    ),
+                    dbc.Tab(
+                        dbc.Card(dbc.CardBody([many_polar_figures_layout.layout])),
+                        label='Many Polar Figures',
+                        className='tab-content',
+                        tab_id='many_porlar_figures_tab',
+                        label_style={'color': 'grey'}
                     )
                 ],
                 id='page_tabs',

@@ -18,5 +18,5 @@ from assets.config import SERIES_LENGTH
 def update_polar_figure(selected_series, divisor):
     series = Series.from_known_sequence(name=selected_series, length=SERIES_LENGTH)
     mod_sequence = series.get_mod_sequence(divisor=divisor)
-    return create_polar_plot(sequence=mod_sequence)
+    return create_polar_plot(sequence=mod_sequence, divisor=divisor)
     
