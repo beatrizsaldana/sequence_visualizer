@@ -6,26 +6,13 @@ from plotly.subplots import make_subplots
 from functions.sequence_class import Series
 
 
-# def create_subplot_specs(number_of_rows, number_of_columns, final_row_plot_num): 
-#     specs = [[{'type': 'polar'}]*number_of_columns]*number_of_rows
-#     if final_row_plot_num > 0:
-#         final_row = [{'type': 'polar'}]*final_row_plot_num
-#         final_row.extend([None]*(number_of_columns-final_row_plot_num))
-#         specs.append(final_row)
-#     return specs
-
-
 def create_subplot_specs(number_of_rows, number_of_columns, final_row_plot_num): 
     specs = [[{'type': 'polar'}]*number_of_columns]*number_of_rows
     if final_row_plot_num > 0:
-        final_row = [{'type': 'polar'}]*number_of_columns
+        final_row = [{'type': 'polar'}]*final_row_plot_num
+        final_row.extend([None]*(number_of_columns-final_row_plot_num))
         specs.append(final_row)
     return specs
-
-
-# def create_subplot_specs(number_of_rows, number_of_columns, final_row_plot_num): 
-#     specs = [[{'type': 'polar'}]*number_of_columns]*number_of_rows
-#     return specs
 
 
 def create_single_polar_plot(sequence: List[int]) -> go.Scatterpolar:
@@ -33,7 +20,6 @@ def create_single_polar_plot(sequence: List[int]) -> go.Scatterpolar:
         r = [3] * len(sequence),
         theta = [x*(360/len(set(sequence))) for x in sequence],
         mode = 'markers+lines',
-        name = 'Test',
         line_color = 'violet',
     )
 
@@ -43,7 +29,7 @@ def create_empty_polar_plot() -> go.Scatterpolar:
         theta = []
     )
 
-def create_many_polar_plots(series: Series, number_of_plots: int = 41) -> go.Figure:
+def create_many_polar_plots(series: Series, number_of_plots: int = 49) -> go.Figure:
     number_of_columns = 10
     number_of_rows, final_row_plot_num = divmod(number_of_plots, number_of_columns)
     fig = make_subplots(
@@ -71,13 +57,6 @@ def create_many_polar_plots(series: Series, number_of_plots: int = 41) -> go.Fig
                 col = j
             )
             divisor+=1
-        for j in range(final_row_plot_num+1, number_of_columns+1):
-            print(j)
-            fig.add_trace(
-                create_empty_polar_plot(),
-                row = i,
-                col = j
-            )
 
 
     fig.update_layout(
