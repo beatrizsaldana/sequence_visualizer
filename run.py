@@ -1,4 +1,4 @@
-from global_files import app
+from global_files.app import app
 
 server = app.server
 

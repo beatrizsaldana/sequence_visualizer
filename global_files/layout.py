@@ -10,7 +10,7 @@ def serve_layout():
         [
             html.H4('Sequence Visualizer', style={'display': 'inline-block'}),
             dbc.Button(
-                '\u24d9',
+                '\u24d8',
                 id = 'information_button',
                 size = 'lg',
                 style = {
@@ -24,7 +24,7 @@ def serve_layout():
     information_modal = html.Div(
         dbc.Modal(
             [
-                dbc.ModalHeader(dbc.ModalTitle('\u24d8' Dashboard Information)),
+                dbc.ModalHeader(dbc.ModalTitle('\u24d8 Dashboard Information')),
                 dbc.ModalBody(
                     [
                         html.P("USER INFORMATION GOES HERE")
@@ -57,7 +57,7 @@ def serve_layout():
 
     store_components = html.Div(
         [
-            dbc.Store(id='tmp', data=None)
+            dcc.Store(id='tmp', data=None)
         ]
     )
 

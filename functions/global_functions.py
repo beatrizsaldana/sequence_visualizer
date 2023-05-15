@@ -1,4 +1,4 @@
-import plotly.graph_objects as GOES
+import plotly.graph_objects as go
 
 
 def blank_figure() -> go.Figure:

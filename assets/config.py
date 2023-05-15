@@ -3,3 +3,5 @@ KNOWN_SERIES = [
     'square',
     'exponential'
 ]
+
+SERIES_LENGTH = 500
