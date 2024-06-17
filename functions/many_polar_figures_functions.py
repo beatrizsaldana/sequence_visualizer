@@ -25,11 +25,13 @@ def create_single_polar_plot(sequence: List[int]) -> go.Scatterpolar:
         marker_size = 2
     )
 
+
 def create_empty_polar_plot() -> go.Scatterpolar:
     return go.Scatterpolar(
         r = [],
         theta = []
     )
+
 
 def create_many_polar_plots(series: Series, number_of_plots: int = 80) -> go.Figure:
     number_of_columns = 10
@@ -61,7 +63,6 @@ def create_many_polar_plots(series: Series, number_of_plots: int = 80) -> go.Fig
                     col = j
                 )
             divisor+=1
-
 
     fig.update_layout(
         template='simple_white',

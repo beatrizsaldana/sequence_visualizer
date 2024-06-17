@@ -4,6 +4,7 @@ import dash_bootstrap_components as dbc
 from assets.config import KNOWN_SERIES
 from functions.global_functions import blank_figure
 
+
 def create_options():
     return [{'label': x.capitalize(), 'value': x} for x in KNOWN_SERIES]
 

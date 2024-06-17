@@ -1,7 +1,6 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 
-from global_files.app import app
 from pages import polar_figure_layout, many_polar_figures_layout
 
 
@@ -80,6 +79,3 @@ def serve_layout():
             store_components
         ]
     )
-
-
-app.layout = serve_layout()

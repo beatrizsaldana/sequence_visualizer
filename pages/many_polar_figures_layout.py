@@ -4,7 +4,8 @@ import dash_bootstrap_components as dbc
 from assets.config import NUMBER_OF_PLOTS, MANY_POLAR_FIGURES_START_VH
 from functions.global_functions import blank_figure
 
-def get_vh(start_vh: int = MANY_POLAR_FIGURES_START_VH, numbe_of_plots: int = NUMBER_OF_PLOTS):
+def get_vh(start_vh: int = MANY_POLAR_FIGURES_START_VH, numbe_of_plots: int = NUMBER_OF_PLOTS) -> str:
+    '''Get the vertical height of the compotent containing the figures'''
     vh = start_vh
     if numbe_of_plots > 40:
         x = numbe_of_plots - 40

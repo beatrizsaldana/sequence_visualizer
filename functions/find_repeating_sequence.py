@@ -33,7 +33,7 @@ def validate_perfect_repeating_sequence(repeating_sequence: List[int], sequence:
         sequence: 1,2,3,4,1,2,3,4,1,2,3,4
         repeating sequence: 1,2,3,4
     
-    This each chunk of sequence of len(repeating_sequence)
+    Each chunk of sequence of len(repeating_sequence)
     is equal to the repeating sequence, then return True,
     otherwise return False.
     For example:
