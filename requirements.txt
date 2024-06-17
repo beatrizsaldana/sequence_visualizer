@@ -1,0 +1,32 @@
+astroid @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b7z3htqpm1/croot/astroid_1717618370968/work
+blinker==1.6.2
+Bottleneck @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_07078715-3ab7-4562-8d3d-d56b0eaa0f7dp504n_ny/croots/recipe/bottleneck_1657175566567/work
+click==8.1.3
+dash==2.9.3
+dash-bootstrap-components==1.4.1
+dash-core-components==2.0.0
+dash-html-components==2.0.0
+dash-table==5.0.0
+dill @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_28zwy_olqk/croot/dill_1715094676263/work
+Flask==2.3.2
+gunicorn==22.0.0
+isort @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_1bnvhw7_ex/croot/isort_1718291367347/work
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.2
+mccabe @ file:///opt/conda/conda-bld/mccabe_1644221741721/work
+numexpr @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_76yyu1p9jk/croot/numexpr_1683221830860/work
+numpy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_f9f5xs2fx0/croot/numpy_and_numpy_base_1682520577456/work
+packaging==24.1
+pandas==1.5.3
+platformdirs @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a8u4fy8k9o/croot/platformdirs_1692205661656/work
+plotly @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_672bb9cb-0b87-45c7-a944-fab16de85302u663y0l7/croots/recipe/plotly_1658160062672/work
+pylint @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_b623auwyzd/croot/pylint_1717622581741/work
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytz @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c56ru3yml9/croot/pytz_1671697451306/work
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+tenacity @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_0ew5sfng29/croot/tenacity_1682972282256/work
+tomli @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_d0e5ffbf-5cf1-45be-8693-c5dff8108a2awhthtjlq/croots/recipe/tomli_1657175508477/work
+tomlkit @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_0dfcgmelf8/croots/recipe/tomlkit_1658946892438/work
+typing_extensions @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_93dg13ilv4/croot/typing_extensions_1715268840722/work
+Werkzeug==2.3.4

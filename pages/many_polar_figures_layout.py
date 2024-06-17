@@ -14,8 +14,6 @@ def get_vh(start_vh: int = MANY_POLAR_FIGURES_START_VH, numbe_of_plots: int = NU
     return f'{vh}vh'
 
 
-
-
 layout = html.Div([
     dcc.Loading(
         [
