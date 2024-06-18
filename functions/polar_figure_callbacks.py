@@ -10,7 +10,7 @@ from assets.config import SERIES_LENGTH
 @callback(
     Output('polar_figure', 'figure'),
     [
-        Input('series_select', 'value'),
+        Input('series_select_single_polar', 'value'),
         Input('divisor_input', 'value')
     ]
 )

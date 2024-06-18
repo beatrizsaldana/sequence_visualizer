@@ -10,7 +10,7 @@ from assets.config import SERIES_LENGTH, NUMBER_OF_PLOTS
 @callback(
     Output('many_polar_figures', 'figure'),
     [
-        Input('series_select', 'value')
+        Input('series_select_single_polar', 'value')
     ]
 )
 def update_polar_figure(selected_series):

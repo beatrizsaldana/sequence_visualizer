@@ -1,12 +1,7 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 
-from assets.config import KNOWN_SERIES
-from functions.global_functions import blank_figure
-
-
-def create_options():
-    return [{'label': x.capitalize(), 'value': x} for x in KNOWN_SERIES]
+from functions.global_functions import blank_figure, create_options
 
 
 def create_toolbar():
@@ -14,7 +9,7 @@ def create_toolbar():
         dbc.Col(
             dbc.InputGroup([
                 dbc.InputGroupText('Series'),
-                dbc.Select(id='series_select', options=create_options(), value=create_options()[0]['value']),
+                dbc.Select(id='series_select_single_polar', options=create_options(), value=create_options()[0]['value']),
             ])
         ),
         dbc.Col(
