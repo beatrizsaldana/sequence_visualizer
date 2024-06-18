@@ -24,13 +24,23 @@ def create_toolbar():
         dbc.Col(
             dbc.InputGroup([
                 dbc.InputGroupText('Series'),
-                dbc.Select(id='series_select_multiple_polar', options=create_options(), value=create_options()[0]['value']),
+                dbc.Select(
+                    id='series_select_multiple_polar',
+                    options=create_options(),
+                    value=create_options()[0]['value'],
+                    disabled=True
+                ),
             ])
         ),
         dbc.Col(
             dbc.InputGroup([
                 dbc.InputGroupText('Number of Figures'),
-                dbc.Input(id='number_of_figures', value=NUMBER_OF_PLOTS, type="number"),
+                dbc.Input(
+                    id='number_of_figures',
+                    value=NUMBER_OF_PLOTS,
+                    type="number",
+                    disabled=True
+                ),
             ])
         )
     ], style={'marginBottom': 15})

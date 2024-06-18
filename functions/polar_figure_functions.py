@@ -10,7 +10,7 @@ def create_polar_plot(sequence: List[int], divisor: int) -> go.Figure:
         theta = [x*(360/len(set(sequence))) for x in sequence],
         mode = 'markers+lines',
         name = 'Test',
-        line_color = 'violet'
+        line_color = 'blue'
     ))
     fig.update_layout(
         title={'text': str(divisor), 'x': 0.5, 'xanchor': 'center'},

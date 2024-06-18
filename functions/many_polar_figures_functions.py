@@ -20,7 +20,7 @@ def create_single_polar_plot(sequence: List[int]) -> go.Scatterpolar:
         r = [3] * len(sequence),
         theta = [x*(360/len(set(sequence))) for x in sequence],
         mode = 'markers+lines',
-        line_color = 'violet',
+        line_color = 'blue',
         line_width = 1,
         marker_size = 2
     )

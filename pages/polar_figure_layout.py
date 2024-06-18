@@ -9,17 +9,27 @@ def create_toolbar():
         dbc.Col(
             dbc.InputGroup([
                 dbc.InputGroupText('Series'),
-                dbc.Select(id='series_select_single_polar', options=create_options(), value=create_options()[0]['value']),
+                dbc.Select(
+                    id='series_select_single_polar',
+                    options=create_options(),
+                    value=create_options()[0]['value'],
+                    disabled=True
+                ),
             ])
         ),
         dbc.Col(
             dbc.InputGroup([
                 dbc.InputGroupText('Divisor'),
-                dbc.Input(id='divisor_input', value=3, type="number"),
+                dbc.Input(id='divisor_input', value=5, type="number"),
             ])
         )
     ], style={'marginBottom': 15})
     return toolbar
+
+
+def create_repeating_sequence_text():
+    sequence_text=html.Div(id="repeating_sequence_text")
+    return sequence_text
 
 
 def create_figure_layout():
@@ -42,5 +52,6 @@ def create_figure_layout():
 
 layout = html.Div([
     create_toolbar(),
+    create_repeating_sequence_text(),
     create_figure_layout()
 ])
