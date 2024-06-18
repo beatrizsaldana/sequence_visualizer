@@ -1,7 +1,7 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 
-from assets.config import NUMBER_OF_PLOTS, MANY_POLAR_FIGURES_START_VH
+from assets.config import KNOWN_SERIES, NUMBER_OF_PLOTS, MANY_POLAR_FIGURES_START_VH, VERTEX_SELECTION_METHODS
 from functions.global_functions import blank_figure, create_options
 
 
@@ -26,9 +26,20 @@ def create_toolbar():
                 dbc.InputGroupText('Series'),
                 dbc.Select(
                     id='series_select_multiple_polar',
-                    options=create_options(),
-                    value=create_options()[0]['value'],
+                    options=create_options(KNOWN_SERIES),
+                    value=create_options(KNOWN_SERIES)[0]['value'],
                     disabled=True
+                ),
+            ])
+        ),
+        dbc.Col(
+            dbc.InputGroup([
+                dbc.InputGroupText('Vertex Selection'),
+                dbc.Select(
+                    id='vertex_selection_multiple_polar',
+                    options=create_options(VERTEX_SELECTION_METHODS),
+                    value=create_options(VERTEX_SELECTION_METHODS)[0]['value'],
+                    disabled=False
                 ),
             ])
         ),

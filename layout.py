@@ -57,22 +57,22 @@ def serve_layout():
             dbc.Tabs(
                 [
                     dbc.Tab(
+                        dbc.Card(dbc.CardBody([polar_figure_layout.layout])),
+                        label='Single Polar Figure',
+                        className='tab-content',
+                        tab_id='polar_figure_tab',
+                        label_style={'color': 'grey'}
+                    ),
+                    dbc.Tab(
                         dbc.Card(dbc.CardBody([many_polar_figures_layout.layout])),
                         label='Many Polar Figures',
                         className='tab-content',
                         tab_id='many_porlar_figures_tab',
                         label_style={'color': 'grey'}
-                    ),
-                    dbc.Tab(
-                        dbc.Card(dbc.CardBody([polar_figure_layout.layout])),
-                        label='Single Polar Figure',
-                        className='tab-content',
-                        tab_id='porlar_figure_tab',
-                        label_style={'color': 'grey'}
                     )
                 ],
                 id='page_tabs',
-                active_tab='many_porlar_figures_tab'
+                active_tab='polar_figure_tab'
             )
         ]
     )

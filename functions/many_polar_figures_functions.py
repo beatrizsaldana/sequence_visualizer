@@ -15,10 +15,11 @@ def create_subplot_specs(number_of_rows, number_of_columns, final_row_plot_num):
     return specs
 
 
-def create_single_polar_plot(sequence: List[int]) -> go.Scatterpolar:
+def create_single_polar_plot(sequence: List[int], divisor: int, vertex_selection_method: str) -> go.Scatterpolar:
+    d = len(set(sequence)) if vertex_selection_method == 'unique_values_in_set' else divisor
     return go.Scatterpolar(
         r = [3] * len(sequence),
-        theta = [x*(360/len(set(sequence))) for x in sequence],
+        theta = [x*(360/d) for x in sequence],
         mode = 'markers+lines',
         line_color = 'blue',
         line_width = 1,
@@ -33,7 +34,7 @@ def create_empty_polar_plot() -> go.Scatterpolar:
     )
 
 
-def create_many_polar_plots(series: Series, number_of_plots: int = 80) -> go.Figure:
+def create_many_polar_plots(series: Series, vertex_selection_method: str, number_of_plots: int = 80, ) -> go.Figure:
     number_of_columns = 10
     number_of_rows, final_row_plot_num = divmod(number_of_plots, number_of_columns)
     fig = make_subplots(
@@ -48,7 +49,7 @@ def create_many_polar_plots(series: Series, number_of_plots: int = 80) -> go.Fig
             sequence = series.get_mod_sequence(divisor=divisor)
             if sequence:
                 fig.add_trace(
-                    create_single_polar_plot(sequence),
+                    create_single_polar_plot(sequence, divisor, vertex_selection_method),
                     row = i,
                     col = j
                 )
@@ -58,7 +59,7 @@ def create_many_polar_plots(series: Series, number_of_plots: int = 80) -> go.Fig
             sequence = series.get_mod_sequence(divisor=divisor)
             if sequence:
                 fig.add_trace(
-                    create_single_polar_plot(sequence),
+                    create_single_polar_plot(sequence, divisor, vertex_selection_method),
                     row = number_of_rows+1,
                     col = j
                 )

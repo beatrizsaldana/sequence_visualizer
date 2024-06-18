@@ -1,6 +1,7 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 
+from assets.config import KNOWN_SERIES
 from functions.global_functions import blank_figure, create_options
 
 
@@ -11,8 +12,8 @@ def create_toolbar():
                 dbc.InputGroupText('Series'),
                 dbc.Select(
                     id='series_select_single_polar',
-                    options=create_options(),
-                    value=create_options()[0]['value'],
+                    options=create_options(KNOWN_SERIES),
+                    value=create_options(KNOWN_SERIES)[0]['value'],
                     disabled=True
                 ),
             ])
@@ -40,7 +41,7 @@ def create_figure_layout():
                     id='polar_figure',
                     figure=blank_figure(),
                     config={'displaylogo': False},
-                    style={'height': '77vh'}
+                    style={'height': '73vh'}
                 )
             ],
             id='polar_figure_loading',
