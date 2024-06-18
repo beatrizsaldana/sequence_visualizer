@@ -4,16 +4,14 @@ import pandas as pd
 
 
 def create_polar_plot(sequence: List[int], divisor: int) -> go.Figure:
-    fig = go.Figure()
-    fig.add_trace(go.Scatterpolar(
-        r = [3] * len(sequence),
-        theta = [x*(360/len(set(sequence))) for x in sequence],
-        mode = 'markers+lines',
-        name = 'Test',
-        line_color = 'blue'
-    ))
-    fig.update_layout(
+    r_dataset = [3] * len(sequence)
+    theta_dataset = [x*(360/len(set(sequence))) for x in sequence]
+    fig_layout = go.Layout(
         title={'text': str(divisor), 'x': 0.5, 'xanchor': 'center'},
+        updatemenus=[dict(
+            type="buttons",
+            buttons=[dict(label="Play",method="animate",args=[None])]
+        )],
         template='simple_white',
         showlegend = False,
         polar = dict(
@@ -21,7 +19,8 @@ def create_polar_plot(sequence: List[int], divisor: int) -> go.Figure:
                 showline=False,
                 ticks='',
                 showticklabels=False,
-                rotation = 90
+                rotation = 90,
+                direction = "clockwise"
             ),
             radialaxis = dict(
                 showline = False,
@@ -32,5 +31,17 @@ def create_polar_plot(sequence: List[int], divisor: int) -> go.Figure:
         margin_t = 40,
         margin_b = 0
     )
+
+    fig = go.Figure(
+        data=[go.Scatterpolar(
+            r = r_dataset,
+            theta = theta_dataset[0:2]
+        )],
+        layout=fig_layout,
+        frames=[go.Frame(
+            data=[go.Scatterpolar(r = r_dataset,theta = theta_dataset[0:x])]
+        ) for x in range(3, len(theta_dataset)+1)]
+    )
+
     return fig
 

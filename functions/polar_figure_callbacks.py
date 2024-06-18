@@ -32,11 +32,12 @@ def update_polar_figure(selected_series, divisor):
     ]
 )
 def update_repeating_sequence_single_polar(repeating_sequence):
-    children = [
-        dbc.Card(
-            dbc.CardBody(
-                html.P(str(repeating_sequence))
-            )
-        )
-    ]
+    # children = [
+    #     dbc.Card(
+    #         dbc.CardBody(
+    #             html.P(str(repeating_sequence))
+    #         )
+    #     )
+    # ]
+    children = [html.P(f"Repeating Sequence: {repeating_sequence}")]
     return children
