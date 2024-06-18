@@ -19,3 +19,6 @@ The repeating sequence here is `0, 1, 1, 2, 0, 2, 2, 1`.
 
 The polar figure will then display this pattern by drawing a line between each of the numbers. In this case it will place the `0` at the `0,360` position on the circle, and `1` at the `120` position and the `2` at the `240` position. All equidistant from eachother.
 
+
+## Deployment
+Used [these](https://dash.plotly.com/deployment?_gl=1*1wwiu1a*_gcl_au*NDE5NTAwNjcuMTcxODQ3ODM4MA..*_ga*MTM1MzkwODUzMC4xNzE4NDc4Mzgx*_ga_6G7EE0JNSC*MTcxODY1NDgyNS4yLjEuMTcxODY1NDg2OC4xNy4wLjA.) instructions for deployment using Heroku.
