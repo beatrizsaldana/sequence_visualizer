@@ -5,7 +5,10 @@ from assets.config import NUMBER_OF_PLOTS, MANY_POLAR_FIGURES_START_VH
 from functions.global_functions import blank_figure, create_options
 
 
-def get_vh(start_vh: int = MANY_POLAR_FIGURES_START_VH, numbe_of_plots: int = NUMBER_OF_PLOTS) -> str:
+def get_vh(
+    start_vh: int = MANY_POLAR_FIGURES_START_VH,
+    numbe_of_plots: int = NUMBER_OF_PLOTS
+) -> str:
     '''Get the vertical height of the compotent containing the figures'''
     vh = start_vh
     if numbe_of_plots > 40:

@@ -6,3 +6,4 @@ from . import polar_figure_functions
 from . import many_polar_figures_functions
 from . import polar_figure_callbacks
 from . import many_polar_figures_callbacks
+from . import other_callbacks

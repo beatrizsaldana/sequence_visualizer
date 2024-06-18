@@ -22,3 +22,9 @@ The polar figure will then display this pattern by drawing a line between each o
 
 ## Deployment
 Used [these](https://dash.plotly.com/deployment?_gl=1*1wwiu1a*_gcl_au*NDE5NTAwNjcuMTcxODQ3ODM4MA..*_ga*MTM1MzkwODUzMC4xNzE4NDc4Mzgx*_ga_6G7EE0JNSC*MTcxODY1NDgyNS4yLjEuMTcxODY1NDg2OC4xNy4wLjA.) instructions for deployment using Heroku.
+
+
+## To-do
+1. Add repeating sequence to the single polar plots
+2. Add animation to the single polar plots
+3. Add info to the modal
