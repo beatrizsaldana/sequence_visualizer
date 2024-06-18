@@ -1,5 +1,5 @@
 # Sequence Visualizer
-Click [here](https://sequence-visualizer-caf8d1d828df.herokuapp.com/) to to to the dashboard.
+Click [here](https://sequence-visualizer-caf8d1d828df.herokuapp.com/) to go to the dashboard.
 
 
 ### So, what is this?
