@@ -3,9 +3,10 @@ from typing import List
 import pandas as pd
 
 
-def create_polar_plot(sequence: List[int], divisor: int) -> go.Figure:
+def create_polar_plot(sequence: List[int], vertex_selection_method: str, divisor: int) -> go.Figure:
+    d = len(set(sequence)) if vertex_selection_method == 'unique_values_in_set' else divisor
     r_dataset = [3] * len(sequence)
-    theta_dataset = [x*(360/divisor) for x in sequence]
+    theta_dataset = [x*(360/d) for x in sequence]
     fig_layout = go.Layout(
         title={'text': str(divisor), 'x': 0.5, 'xanchor': 'center'},
         updatemenus=[dict(
@@ -53,7 +54,7 @@ def create_polar_plot(sequence: List[int], divisor: int) -> go.Figure:
                 line_width = 3,
                 marker_size = 6
             )]
-        ) for x in range(3, len(theta_dataset)+1)]
+        ) for x in range(2, len(theta_dataset)+1)]
     )
 
     return fig

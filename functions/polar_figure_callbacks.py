@@ -15,13 +15,14 @@ from assets.config import SERIES_LENGTH
     ],
     [
         Input('series_select_single_polar', 'value'),
-        Input('divisor_input', 'value')
+        Input('vertex_selection_single_polar', 'value'),
+        Input('divisor_input', 'value') 
     ]
 )
-def update_polar_figure(selected_series, divisor):
+def update_polar_figure(selected_series, vertex_selection_method, divisor):
     series = Series.from_known_sequence(name=selected_series, length=SERIES_LENGTH)
     mod_sequence = series.get_mod_sequence(divisor=divisor)
-    figure = create_polar_plot(sequence=mod_sequence, divisor=divisor)
+    figure = create_polar_plot(sequence=mod_sequence, vertex_selection_method=vertex_selection_method, divisor=divisor)
     return [figure, mod_sequence]
 
 
@@ -32,12 +33,5 @@ def update_polar_figure(selected_series, divisor):
     ]
 )
 def update_repeating_sequence_single_polar(repeating_sequence):
-    # children = [
-    #     dbc.Card(
-    #         dbc.CardBody(
-    #             html.P(str(repeating_sequence))
-    #         )
-    #     )
-    # ]
     children = [html.P(f"Repeating Sequence: {repeating_sequence}")]
     return children

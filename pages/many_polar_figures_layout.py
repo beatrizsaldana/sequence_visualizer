@@ -39,7 +39,7 @@ def create_toolbar():
                     id='vertex_selection_multiple_polar',
                     options=create_options(VERTEX_SELECTION_METHODS),
                     value=create_options(VERTEX_SELECTION_METHODS)[0]['value'],
-                    disabled=False
+                    disabled=True
                 ),
             ])
         ),
