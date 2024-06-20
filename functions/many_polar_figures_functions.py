@@ -21,7 +21,6 @@ def create_single_polar_plot(sequence: List[int], divisor: int, vertex_selection
         r = [3] * len(sequence),
         theta = [x*(360/d) for x in sequence],
         mode = 'markers+lines',
-        line_color = 'blue',
         line_width = 1,
         marker_size = 2
     )
@@ -76,7 +75,8 @@ def create_many_polar_plots(series: Series, vertex_selection_method: str, number
             showline=True,
             ticks='',
             showticklabels=False,
-            rotation = 90
+            rotation = 90,
+            direction = "clockwise"
         ),
         radialaxis = dict(
             showline = False,
