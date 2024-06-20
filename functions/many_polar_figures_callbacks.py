@@ -1,10 +1,8 @@
 from functions.sequence_class import Series
 from functions.many_polar_figures_functions import create_many_polar_plots
-from functions.get_sequences_functions import get_fibonacci_sequence
+from assets.config import SERIES_LENGTH, NUMBER_OF_PLOTS
 
 from dash import Input, Output, callback
-
-from assets.config import SERIES_LENGTH, NUMBER_OF_PLOTS
 
 
 @callback(

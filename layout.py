@@ -20,7 +20,12 @@ def serve_layout():
                     'color':'grey'
                 }
             )
-        ]
+        ],
+        style={
+            'float': 'left',
+            'paddingLeft':7,
+            'paddingRight':5,
+        }
     )
 
     information_modal = html.Div(
@@ -30,7 +35,7 @@ def serve_layout():
                 dbc.ModalBody(
                     [
                         dcc.Markdown('''
-                            This is a visualization of the repeating patterns that arise when dividing every number of a series by an integer and then taking the remainder. For example, if we look at the fibonacci sequence:
+                            This is a visualization of the repeating patterns that arise when dividing every number of a sequence by an integer and then taking the remainder. For example, if we look at the fibonacci sequence:
                             ```
                             0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, ...
                             ```
@@ -61,7 +66,8 @@ def serve_layout():
                         label='Many Polar Figures',
                         className='tab-content',
                         tab_id='many_porlar_figures_tab',
-                        label_style={'color': 'grey'}
+                        label_style={'color': 'grey'},
+                        #tab_style={"marginLeft": "auto"}
                     ),
                     dbc.Tab(
                         dbc.Card(dbc.CardBody([polar_figure_layout.layout])),
@@ -89,5 +95,10 @@ def serve_layout():
             information_modal,
             content_tabs,
             store_components
-        ]
+        ],
+        style={
+            'paddingTop':7,
+            'paddingLeft':5,
+            'paddingRight':5
+        }
     )

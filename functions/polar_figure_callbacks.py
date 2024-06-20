@@ -1,11 +1,9 @@
 from functions.sequence_class import Series
 from functions.polar_figure_functions import create_polar_plot
-from functions.get_sequences_functions import get_fibonacci_sequence
+from assets.config import SERIES_LENGTH
 
 from dash import html, Input, Output, callback
 import dash_bootstrap_components as dbc
-
-from assets.config import SERIES_LENGTH
 
 
 @callback(
@@ -33,5 +31,8 @@ def update_polar_figure(selected_series, vertex_selection_method, divisor):
     ]
 )
 def update_repeating_sequence_single_polar(repeating_sequence):
-    children = [html.P(f"Repeating Sequence: {repeating_sequence}")]
+    children = [
+        html.P(f"Repeating Sequence: {repeating_sequence}"),
+        html.P(f"Repeating Sequence Length: {len(repeating_sequence)}")
+    ]
     return children

@@ -52,7 +52,7 @@ def create_figure_layout():
                     id='polar_figure',
                     figure=blank_figure(),
                     config={'displaylogo': False},
-                    style={'height': '73vh'}
+                    style={'height': '70vh'}
                 )
             ],
             id='polar_figure_loading',

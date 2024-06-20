@@ -4,7 +4,7 @@ KNOWN_SERIES = [
     'exponential'
 ]
 
-SERIES_LENGTH = 800
+SERIES_LENGTH = 2000
 
 NUMBER_OF_PLOTS = 100
 
