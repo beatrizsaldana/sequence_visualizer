@@ -25,6 +25,4 @@ Used [these](https://dash.plotly.com/deployment?_gl=1*1wwiu1a*_gcl_au*NDE5NTAwNj
 
 
 ## To-do
-1. Add repeating sequence to the single polar plots
-2. Add animation to the single polar plots
-3. Add info to the modal
+1. Make mobile friendly?
